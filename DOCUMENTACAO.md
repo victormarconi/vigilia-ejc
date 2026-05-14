@@ -1,38 +1,49 @@
-# Vigilia EJC
+# Vigilia EJC - Documentacao Operacional
 
-Sistema da Vigilia EJC publicado em vigiliaejcpst.pdm1.com.br.
+## Papel do projeto
 
-## Origem
+Vigilia EJC faz parte da VPS PDM. Este repositorio guarda codigo fonte e documentacao, mas nao guarda dados sensiveis nem dados de cliente.
 
-Este repositorio foi criado a partir de export filtrado da VPS.
+## Dominio
 
-## Nao versionado
+`vigiliaejcpst.pdm1.com.br`
 
-- `.env` e segredos
-- bancos, dumps e backups
+## Caminho na VPS
+
+`/var/www/vigilia`
+
+## Stack
+
+Node.js/Next restaurado, PM2, Nginx, MariaDB
+
+## Processo de execucao
+
+PM2: vigilia-ejc, porta local 3205.
+
+## Dados que nao estao no GitHub
+
+Banco MariaDB vigilia_ejc e .env ficam no backup criptografado.
+
+Esses dados ficam no Google Drive criptografado, via projeto `pdm-backup`.
+
+## O que nao deve ser versionado
+
+- `.env` e variaveis sensiveis
+- dumps de banco
+- backups `.tar.gz` / `.enc`
 - `node_modules`, builds e caches
-- logs, temporarios e certificados
-- anexos privados de atendimento quando existirem
+- logs e temporarios
+- certificados/chaves
+- uploads privados de clientes, quando existirem
 
-## Backup de dados
+## Observacoes
 
-Dados persistentes ficam no Google Drive criptografado pelo projeto `pdm-backup`.
+Repositorio publico, mas sem banco e segredos.
 
-## Arquivos versionados
+## Checklist de manutencao
 
-- `vigilia/.gitignore`
-- `vigilia/package-lock.json`
-- `vigilia/package.json`
-- `vigilia/public/admin.css`
-- `vigilia/public/admin.html`
-- `vigilia/public/admin.js`
-- `vigilia/public/index.html`
-- `vigilia/public/script.js`
-- `vigilia/public/styles.css`
-- `vigilia/README.md`
-- `vigilia/schema.sql`
-- `vigilia/scripts/init-db.js`
-- `vigilia/scripts/make-admin-hash.js`
-- `vigilia/src/config.js`
-- `vigilia/src/db.js`
-- `vigilia/src/server.js`
+- Conferir processo PM2/Docker depois de deploy.
+- Conferir Nginx e SSL.
+- Conferir se o backup diario rodou.
+- Nunca commitar segredos.
+- Antes de restaurar em outra VPS, restaurar primeiro banco/.env/uploads pelo backup criptografado.
