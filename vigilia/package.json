@@ -1,0 +1,31 @@
+{
+  "name": "vigilia-ejc",
+  "version": "1.0.0",
+  "description": "Site da equipe da Vigilia do EJC com formulario de pedidos de oracao e painel admin.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "init-db": "node scripts/init-db.js",
+    "make-admin-hash": "node scripts/make-admin-hash.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "compression": "^1.7.4",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-rate-limit": "^7.5.0",
+    "express-session": "^1.18.1",
+    "helmet": "^8.0.0",
+    "mysql2": "^3.11.5"
+  },
+  "devDependencies": {
+    "archiver": "^7.0.1",
+    "esbuild": "^0.25.0",
+    "nodemon": "^3.1.9",
+    "ssh2": "^1.17.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

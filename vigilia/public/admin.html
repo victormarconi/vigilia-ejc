@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin | Vigília EJC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=20260505-2" />
+    <link rel="stylesheet" href="/admin.css?v=20260505-4" />
+  </head>
+  <body class="admin-page">
+    <header class="site-header">
+      <a class="brand" href="/" aria-label="Voltar para o site">
+        <span class="brand-mark">EJC</span>
+        <span>
+          <strong>Painel da Vigília</strong>
+          <small>Área administrativa</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação administrativa">
+        <a href="/">Site</a>
+        <button class="admin-icon-link" type="button" data-logout aria-label="Sair" title="Sair">
+          <span aria-hidden="true">↪</span>
+        </button>
+      </nav>
+    </header>
+
+    <main class="admin-shell">
+      <section class="login-panel admin-view is-active" data-login-panel>
+        <div class="admin-login-heading">
+          <p class="kicker">Acesso restrito</p>
+          <h1>Entrar no admin</h1>
+          <p>Faça login para ver os pedidos e cadastrar ou editar as equipes do carrossel.</p>
+        </div>
+        <form class="admin-login standalone" data-admin-login>
+          <label>
+            Usuário
+            <input name="username" type="text" autocomplete="username" required />
+          </label>
+          <label>
+            Senha
+            <input name="password" type="password" autocomplete="current-password" required />
+          </label>
+          <button class="primary-action form-action" type="submit">Entrar</button>
+          <p class="form-status" data-admin-status role="status"></p>
+        </form>
+      </section>
+
+      <section class="admin-dashboard admin-view" data-admin-dashboard>
+        <div class="admin-hero">
+          <div>
+            <p class="kicker">Admin</p>
+            <h1>Painel da Vigília</h1>
+            <p>Gerencie os pedidos de oração e as equipes exibidas no site.</p>
+          </div>
+        </div>
+
+        <div class="admin-tabs" role="tablist" aria-label="Seções do painel">
+          <button class="tab-button is-active" type="button" data-tab="teams">Equipes</button>
+          <button class="tab-button" type="button" data-tab="requests">Pedidos</button>
+        </div>
+
+        <section class="admin-tab-panel" data-panel="requests">
+          <div class="requests-list" data-requests-list>
+            <p class="empty-state">Carregando pedidos...</p>
+          </div>
+        </section>
+
+        <section class="admin-tab-panel is-active" data-panel="teams">
+          <div class="admin-panel-heading">
+            <div>
+              <p class="kicker">Cadastro de equipes</p>
+              <h2>Editar carrossel</h2>
+            </div>
+            <button class="secondary-action" type="button" data-new-team>Nova equipe</button>
+          </div>
+
+          <form class="team-form" data-team-form>
+            <input type="hidden" name="id" />
+            <label>
+              Nome da equipe
+              <input name="name" type="text" required maxlength="80" />
+            </label>
+            <label>
+              Santo
+              <input name="saint" type="text" required maxlength="120" />
+            </label>
+            <label>
+              Virtude
+              <input name="virtue" type="text" required maxlength="80" />
+            </label>
+            <label>
+              Lema
+              <input name="motto" type="text" required maxlength="120" />
+            </label>
+            <label>
+              URL da foto
+              <input name="imageUrl" type="url" maxlength="600" placeholder="https://..." />
+            </label>
+            <label>
+              Ordem
+              <input name="sortOrder" type="number" min="0" max="999" value="0" />
+            </label>
+            <label>
+              Cor principal
+              <input name="primaryColor" type="color" value="#3f7c69" />
+            </label>
+            <label>
+              Cor secundária
+              <input name="secondaryColor" type="color" value="#c99633" />
+            </label>
+            <label class="checkbox-field">
+              <input name="isActive" type="checkbox" checked />
+              Mostrar no site
+            </label>
+            <label class="full-field">
+              Descrição
+              <textarea name="description" required maxlength="1200" rows="5"></textarea>
+            </label>
+            <div class="team-form-actions">
+              <button class="primary-action" type="submit">Salvar equipe</button>
+            </div>
+            <p class="form-status" data-team-status role="status"></p>
+          </form>
+
+          <div class="teams-admin-list" data-teams-list></div>
+        </section>
+      </section>
+    </main>
+
+    <div class="confirm-modal" data-confirm-modal aria-hidden="true">
+      <div class="confirm-dialog" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+        <p class="kicker">Confirmar exclusão</p>
+        <h2 id="confirm-title">Apagar pedido?</h2>
+        <p data-confirm-text>Essa ação não poderá ser desfeita.</p>
+        <div class="confirm-actions">
+          <button class="secondary-action" type="button" data-cancel-delete>Cancelar</button>
+          <button class="danger-action" type="button" data-confirm-delete disabled>Apagar em 1,5s</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="/admin.js?v=20260505-4"></script>
+  </body>
+</html>

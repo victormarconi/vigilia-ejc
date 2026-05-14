@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vigília EJC</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/styles.css?v=20260505-6" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Início">
+        <span class="brand-mark">EJC</span>
+        <span>
+          <strong>Equipe da Vigília</strong>
+          <small>Encontro de Jovens com Cristo</small>
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#equipes">Equipes</a>
+        <a href="#tema">Tema</a>
+        <a href="#oracao">Oração</a>
+        <a class="admin-icon-link" href="/admin" aria-label="Abrir painel administrativo" title="Admin">
+          <span aria-hidden="true">⚙</span>
+        </a>
+      </nav>
+    </header>
+
+    <main id="inicio">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-bg" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="kicker">Vigília EJC 2026</p>
+          <h1 id="hero-title">Uma noite inteira aos pés da cruz</h1>
+          <p>
+            Um espaço de silêncio, intercessão e unidade para sustentar cada
+            equipe em oração, lembrando que Cristo se entrega por amor e nos
+            chama a permanecer com Ele.
+          </p>
+          <a class="primary-action" href="#oracao">Pedir oração</a>
+        </div>
+      </section>
+
+      <section class="carousel-section" id="equipes" aria-labelledby="equipes-title">
+        <div class="section-heading">
+          <p class="kicker">Santos intercessores</p>
+          <h2 id="equipes-title">Cada equipe, uma missão</h2>
+        </div>
+
+        <div class="carousel" data-carousel>
+          <article class="saint-card" data-slide aria-live="polite">
+            <div class="portrait" data-portrait>
+              <img data-portrait-img alt="" loading="eager" />
+              <span data-portrait-fallback>Sem foto</span>
+            </div>
+            <div class="saint-copy">
+              <p class="team-label" data-team></p>
+              <h3 data-saint>Carregando equipes...</h3>
+              <p data-description></p>
+              <div class="virtue-row">
+                <span data-virtue></span>
+                <span data-motto></span>
+              </div>
+            </div>
+          </article>
+
+          <div class="carousel-controls" aria-label="Controles do carrossel">
+            <button class="icon-button" type="button" data-prev aria-label="Equipe anterior">
+              <span aria-hidden="true">&lsaquo;</span>
+            </button>
+            <div class="dots" data-dots aria-label="Selecionar equipe"></div>
+            <button class="icon-button" type="button" data-next aria-label="Próxima equipe">
+              <span aria-hidden="true">&rsaquo;</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="theme-band" id="tema" aria-labelledby="tema-title">
+        <div class="theme-copy">
+          <p class="kicker">Tema</p>
+          <h2 id="tema-title">Jesus morreu na cruz</h2>
+          <p>
+            A cruz não é o fim da história, mas o lugar onde o amor de Deus se
+            deixa ver por inteiro. Nela, Jesus assume nossas dores, vence o
+            pecado e abre um caminho de reconciliação.
+          </p>
+          <p>
+            Para a Vigília, esse tema nos convida a olhar para cada jovem com
+            misericórdia: ninguém chega ao encontro sem carregar algo, e ninguém
+            sai da cruz sem receber uma palavra nova de vida.
+          </p>
+        </div>
+        <div class="cross-panel" aria-hidden="true">
+          <span class="cross-vertical"></span>
+          <span class="cross-horizontal"></span>
+          <span class="light-ring"></span>
+        </div>
+      </section>
+
+      <section class="prayer-section" id="oracao" aria-labelledby="oracao-title">
+        <div class="section-heading">
+          <p class="kicker">Pedidos de oração</p>
+          <h2 id="oracao-title">Deixe seu pedido para a equipe</h2>
+        </div>
+
+        <form class="prayer-form" data-prayer-form>
+          <label>
+            Nome
+            <input name="nome" type="text" autocomplete="name" required maxlength="80" />
+          </label>
+
+          <label>
+            Idade
+            <input name="idade" type="number" min="10" max="120" required />
+          </label>
+
+          <label>
+            Equipe
+            <select name="equipe" required data-team-select>
+              <option value="">Carregando equipes...</option>
+            </select>
+          </label>
+
+          <label class="full-field">
+            Pedido de oração
+            <textarea name="pedido" required maxlength="800" rows="6"></textarea>
+          </label>
+
+          <button class="primary-action form-action" type="submit">Enviar pedido</button>
+          <p class="form-status" data-form-status role="status"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Equipe da Vigília EJC</span>
+      <span>Permanecei comigo em oração.</span>
+    </footer>
+
+    <script src="/script.js?v=20260505-7"></script>
+  </body>
+</html>

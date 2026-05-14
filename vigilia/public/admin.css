@@ -1,0 +1,242 @@
+body.admin-page {
+  background: #f6efe4;
+}
+
+.admin-view,
+.admin-tab-panel {
+  display: none;
+}
+
+.admin-view.is-active,
+.admin-tab-panel.is-active {
+  display: block;
+}
+
+.admin-page .site-header {
+  min-height: 86px;
+  align-items: center;
+}
+
+.admin-page .brand strong {
+  font-size: 21px;
+}
+
+.admin-page .brand small {
+  font-size: 14px;
+}
+
+.admin-page .main-nav {
+  gap: 14px;
+}
+
+.admin-page .admin-shell {
+  width: 100%;
+  min-height: calc(100vh - 86px);
+  padding: 36px clamp(20px, 5vw, 72px) 72px;
+}
+
+.admin-page h1,
+.admin-page h2,
+.admin-page h3 {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.1;
+}
+
+.admin-page h1 {
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 900;
+}
+
+.admin-page h2 {
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 900;
+}
+
+.admin-login-heading {
+  max-width: 620px;
+  margin-bottom: 24px;
+}
+
+.admin-login-heading p:not(.kicker),
+.admin-hero p:not(.kicker) {
+  margin: 12px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.login-panel {
+  width: min(760px, 100%);
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 42px);
+  min-height: 0;
+}
+
+.admin-login.standalone {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.admin-login.standalone label {
+  font-size: 15px;
+}
+
+.admin-login.standalone input {
+  min-height: 52px;
+}
+
+.admin-dashboard {
+  width: min(1180px, 100%);
+}
+
+.admin-hero {
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.admin-tabs {
+  margin: 0 0 22px;
+}
+
+.admin-panel-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 20px 22px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.admin-panel-heading h2 {
+  margin: 0;
+}
+
+.team-form {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.team-form::before {
+  content: "Use o formulário abaixo para adicionar uma nova equipe. Para editar, clique em Editar na lista e depois salve.";
+  grid-column: 1 / -1;
+  padding: 12px 14px;
+  border-radius: 6px;
+  background: rgba(201, 150, 51, 0.13);
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.team-form label {
+  font-size: 14px;
+}
+
+.team-form .full-field {
+  grid-column: 1 / -1;
+}
+
+.team-form-actions,
+.team-form .form-status {
+  grid-column: 1 / -1;
+}
+
+.teams-admin-list,
+.requests-list {
+  margin-top: 0;
+}
+
+.request-item,
+.team-admin-item {
+  box-shadow: 0 8px 28px rgba(20, 32, 30, 0.06);
+}
+
+.request-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: start;
+}
+
+.request-main {
+  min-width: 0;
+}
+
+.team-thumb.is-placeholder {
+  display: grid;
+  place-items: center;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--thumb-a) 82%, white), color-mix(in srgb, var(--thumb-b) 82%, black));
+}
+
+.team-thumb.is-placeholder span {
+  color: rgba(255, 253, 248, 0.92);
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+}
+
+.team-thumb.has-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.confirm-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: none;
+  place-items: center;
+  padding: 20px;
+  background: rgba(18, 24, 23, 0.48);
+}
+
+.confirm-modal.is-active {
+  display: grid;
+}
+
+.confirm-dialog {
+  width: min(480px, 100%);
+  padding: 24px;
+  background: var(--cream);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 22px 80px rgba(10, 16, 15, 0.3);
+}
+
+.confirm-dialog h2 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.confirm-dialog p:not(.kicker) {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.confirm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.danger-action:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+@media (max-width: 860px) {
+  .admin-login.standalone,
+  .team-form {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-panel-heading,
+  .admin-hero {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .request-item {
+    grid-template-columns: 1fr;
+  }
+}
