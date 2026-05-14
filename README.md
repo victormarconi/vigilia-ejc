@@ -1,3 +1,9 @@
 # Vigilia EJC
 
-Sistema da Vigilia EJC publicado em vigiliaejcpst.pdm1.com.br.
+Repositorio publico, mas sem banco e segredos.
+
+- Documentacao: [DOCUMENTACAO.md](DOCUMENTACAO.md)
+- Restauracao: [RESTAURACAO.md](RESTAURACAO.md)
+- Fluxograma: [FLUXO.md](FLUXO.md)
+
+Este repositorio nao deve receber segredos, bancos, dumps, backups ou dependencias instaladas.
